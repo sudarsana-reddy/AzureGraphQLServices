@@ -1,0 +1,24 @@
+{
+  "name": "test-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --ignore data/ server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.11.0",
+    "azure-devops-node-api": "^10.1.1",
+    "base-64": "^0.1.0",
+    "express": "^4.17.1",
+    "graphql": "^14.6.0",
+    "notarealdb": "^0.2.2",
+    "xml-js": "^1.6.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

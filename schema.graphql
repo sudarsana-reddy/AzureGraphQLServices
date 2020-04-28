@@ -1,0 +1,102 @@
+type Query  {
+   test: String, 
+   students:[Student]
+   studentById(id:ID!):Student      
+}
+
+type Mutation{
+    createStudent(collegeId:ID,firstName:String,lastName:String):Student
+    signUp: String
+        
+    createATestRun(projectInput: ProjectInput!, input: TestRunInput!):TestRun
+    updateTestRun(projectInput: ProjectInput!, state: TestRunUpdateInput!):TestRun    
+    addATestCaseResultToRun(projectInput: ProjectInput!, testCaseId:Int!):TestCaseResult
+    updateTestCaseResult(projectInput: ProjectInput!, input: TestCaseResultInput!, testCaseId:Int!):TestCaseResult
+    resetTestCasesToActive(projectInput:ProjectInput!): [TestPoint]
+}
+
+type Student{
+   id:ID!
+   firstName:String
+   lastName:String
+   password:String
+   collegeId:String
+}
+
+type TestPoint{
+   id:Int
+   isActive:Boolean
+}
+
+input ProjectInput{
+   projectName:String!
+   planID:Int
+   suiteID:Int
+   apiVersion:String!
+   runId:Int
+   configurationName:String
+}
+
+type TestRun{
+   id:Int 
+   name:String
+   plan:TestPlan
+   isAutomated:Boolean
+   state:String
+   webAccessUrl:String
+   totalTests:Int
+   incompleteTests:Int
+   passedTests:Int
+   unanalyzedTests:Int
+   comment:String
+}
+
+input TestRunInput{  
+   id:Int 
+   name:String
+   plan:TestPlanInput
+   isAutomated:Boolean
+   state:String
+   webAccessUrl:String
+   totalTests:Int
+   incompleteTests:Int
+   passedTests:Int
+   unanalyzedTests:Int
+   comment:String
+}
+
+input TestRunUpdateInput{
+   state:String!
+}
+
+type TestPlan{
+   id:Int
+}
+
+input TestPlanInput{
+   id:Int!
+}
+
+type TestCaseResult{
+   id:Int
+   state:String
+   outcome:String
+   errorMessage:String
+   comment:String
+}
+
+input TestCaseResultInput{
+   id:Int
+   state:String
+   outcome:String
+   errorMessage:String
+   comment:String
+}
+
+type TestCase{
+   id:Int
+}
+
+type Configuration{
+   id:Int
+}

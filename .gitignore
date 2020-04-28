@@ -1,0 +1,10 @@
+# Compiled class file
+node_modules/
+
+
+# Log file
+*.log
+
+# Secret file
+*.pat
+
