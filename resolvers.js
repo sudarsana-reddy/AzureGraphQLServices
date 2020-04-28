@@ -5,7 +5,7 @@ const stringutils = require('./utils/stringutils');
 const {azureDetails} = require('./azure/constants');
 const {updateTestStepResults} = require('./azure/ops')
 
-PAT =  azureDetails.pat;   //"loevmhn2cmsjfqreootm7zb3bo7q6xoteoxs3xxygywwht53zkya"; //PAT - Personal Access Token
+PAT =  azureDetails.pat;    //PAT - Personal Access Token
 BASE_URL = azureDetails.url;
 
 CREATE_TEST_RUN_URL = `${BASE_URL}{0}/_apis/test/runs?{1}`;

@@ -1,5 +1,5 @@
 azureDetails ={
-    "pat":"loevmhn2cmsjfqreootm7zb3bo7q6xoteoxs3xxygywwht53zkya",
+    "pat":"",
     "url":"https://sudarsana.visualstudio.com/"
 }
 
